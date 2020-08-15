@@ -11,8 +11,32 @@
     <body>
        
         <header>
-            <h1><a href="{%url 'home' %}">afaq blog</a></h1>
+
+            <div class='nav-left'>
+                
+                <h1><a href="{%url 'home' %}">afaq blog</a></h1>
+
+            </div>
+
+            <div class='nav-right'>
+                
+                    <a href="{%url 'post_new' %}">+ new blog post </a>
+    
+            </div>
+            
         </header>
+
+        {% if user.is_authenticated %}
+
+            <p>Hi {{ user.username }}! </p>
+            <a href="{% url 'logout' %}">Log out</a>
+        
+        {% else %}
+
+            <p>You are not logged in</p>
+            <a href="{% url 'login' %}">log in</a>
+        
+        {% endif %}
 
         <div>
             

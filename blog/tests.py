@@ -33,3 +33,5 @@ class BlogTests(TestCase):
     def test_string_represnatation(self):
         post = Post(title='A sample title')
         self.assertEqual(str(post), post.title)
+
+    
